@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.typealpha.ltd</id>
     <title>笔记</title>
-    <updated>2022-01-27T07:52:29.756Z</updated>
+    <updated>2022-01-27T08:06:09.722Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.typealpha.ltd"/>
     <link rel="self" href="https://blog.typealpha.ltd/atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://blog.typealpha.ltd/images/avatar.png</logo>
     <icon>https://blog.typealpha.ltd/favicon.ico</icon>
     <rights>All rights reserved 2022, 笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[服务器同步阿里云时间]]></title>
+        <id>https://blog.typealpha.ltd/post/tong-bu-a-li-yun-shi-jian/</id>
+        <link href="https://blog.typealpha.ltd/post/tong-bu-a-li-yun-shi-jian/">
+        </link>
+        <updated>2022-01-27T08:01:55.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="安装chrony">安装chrony</h1>
+<pre><code>yum install chrony -y
+vim /etc/chrony.conf
+修改chrony配置文件（替换默认的centos）
+server ntp1.aliyun.com iburst
+server ntp2.aliyun.com iburst
+server ntp3.aliyun.com iburst
+server ntp4.aliyun.com iburst
+allow 192.168.0.0/16 #允许NTP客户同步ip段 NTP同步时需要配置
+</code></pre>
+<h1 id="启动chronyd服务并加入开机自启">启动chronyd服务，并加入开机自启</h1>
+<pre><code>systemctl enable chronyd
+systemctl enable chronyd
+</code></pre>
+<h1 id="验证效果">验证效果</h1>
+<pre><code>timedatectl</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://blog.typealpha.ltd/post/hello-gridea/</id>
